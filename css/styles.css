@@ -1,0 +1,678 @@
+@import url('https://fonts.cdnfonts.com/css/gallient');
+@import url('https://fonts.cdnfonts.com/css/avenir');
+                
+
+:root{
+    --blanco: #f9f9f9;
+    --dorado: rgb(213,176,102);
+    --azul: rgb(14,123,146);
+    --rosa1:rgb(254, 112, 160);
+    --rosa11:rgba(254, 112, 160,0.5);
+    --rosa2:rgb(252, 186, 156);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.4%;
+    overflow-x: hidden;
+}
+body{
+    background: #f9f9f9;;
+}
+
+header{
+    position:fixed;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-family: gallient;
+    z-index: 9999;
+}
+
+.abajo{
+    background: rgb(45,45,45);
+}
+
+header input{
+    display: none;
+}
+header label{
+    font-size: 3rem;
+    color:var(--blanco);
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.navbar{
+    display: flex;
+    text-align: center;
+}
+.navbar li{
+    cursor: pointer;
+    display: inline-block;
+    font-size: 2.5rem;
+    list-style: none;  
+    margin: 3rem;
+    letter-spacing: .1rem;
+}
+.navbar li a{
+    text-decoration: none;
+    color: var(--blanco);
+}
+
+.navbar li a:hover{
+    color: rgb(254, 112, 160);
+}
+
+
+.video-container{
+    display: block;
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+.video-container video{
+
+    width: 100%;
+    height: 100%;
+}
+
+.filtro{
+    position: absolute;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    
+}
+
+h1{
+    top:40%;
+    font-size: 5rem;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    color: rgba(255, 255, 255, 0.547);
+    font-family: avenir;
+    white-space: nowrap;
+    border-right: 4px solid;
+    width: 100%;
+    animation: typing 2s steps(50),blink .5s infinite step-end alternate;
+    overflow: hidden;
+}
+
+@keyframes typing{
+    from {width: 0;}
+}
+
+@keyframes blink{
+    50%{border-color: transparent;}
+}
+main{
+    /*background: linear-gradient(rgb(23,52,150),rgb(10,108,183),rgb(4,146,194),rgb(2,190,178),rgb(9,147,166),rgb(11,117,185),rgb(36,53,117));*/
+    border: 0;
+    margin-top: -2%;
+}
+.about{
+    margin-top: 4rem;
+    padding: 6rem;
+    display: flex;
+    justify-content: flex-end;
+}
+.wall{
+    width: 60%;
+    height: auto;
+    position: relative;
+}
+
+.wall img{
+    width: 100%;
+    position: absolute;
+    top:7rem;
+    right: -5rem;
+}
+.quiensoninfo{
+    background: rgb(14,123,146);
+    width: 60%;
+    padding: 9rem 7rem 9rem 7rem;
+    justify-content: flex-end;
+    margin-top: 10rem;
+}
+
+.quiensoninfo h2, 
+.quiensoninfo p{
+    color: white;
+}
+
+.quiensoninfo h2{
+    font-family: gallient;
+    font-size: 5rem;
+    text-align: center;
+}
+
+.quiensoninfo p{
+    font-size: 2rem;
+    font-family: avenir;
+    text-align: justify;
+}
+.wallpapers{
+    width: 100%;
+    margin-top: 10rem;
+}
+
+.wallpapers h2{
+    text-align: center;
+    font-size: 5rem;
+    font-family: gallient;
+    color:var(--azul);
+    font-weight: bolder;
+    margin-top: 5rem;   
+}
+
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 8%;
+}
+
+.galeria{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    grid-gap: 30px;
+    margin-top: 0;
+}
+
+.galeria img{
+    width: 100%;
+}
+
+.miembros{
+    width: 100%;
+    margin-top: 20rem;
+}
+.miembros h2{
+    color: var(--azul);
+    font-family: gallient;
+    text-align: center;
+    font-size: 5rem;
+    font-weight: bolder;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+.imagenes{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(15rem, 30rem));
+    column-gap: 2rem;
+    padding: 0 29.8%;
+    row-gap: 2rem;
+    justify-content: center;
+}
+
+.imagenes img{
+    width: 100%;
+}
+.imagenes div{
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    
+}
+
+.imagenes div h3{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: avenir;
+    font-size: 3rem;
+    color: var(--blanco);
+    z-index: 3;
+    visibility: hidden;
+    opacity: 0;
+}
+
+
+.imagenes div:before,
+.imagenes div:after {
+    content: '';
+    width: 300%;
+    height: 50rem;
+    position: absolute;
+    top:0;
+    left:0rem;
+    background: rgba(82, 196, 241, 0.250);
+    transition: all 900ms;
+}
+
+.imagenes div:before{
+    transform: rotate(60deg) translateY(-55rem) translateX(0rem);
+}
+
+.imagenes div:after{
+    transform: rotate(45deg) translateY(55rem) translateX(-6rem);
+}
+.imagenes div:hover h3{
+    visibility: visible;
+    opacity: 1;
+    transition: all 1.4s;
+}
+.imagenes div:hover:before{
+    transform: rotate(35deg) translateY(1rem) translateX(-10rem);
+}
+
+.imagenes div:hover:after{
+    transform: rotate(45deg) translateY(9rem) translateX(-11rem);
+}
+
+input[type="radio"]{
+    display: none;
+}
+.categorias {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    justify-content: center;
+}
+
+ .categorias label{
+    padding: .6rem 4rem;
+    margin: 9rem 1rem 1rem 1rem;
+    font-size: 2rem;
+    font-family: avenir;
+    color: var(--azul);
+    cursor: pointer;
+    border: 1px solid var(--azul);
+    border-radius: 3rem;
+}
+
+.categorias label:hover{
+    color: var(--rosa1);
+    border: 1px solid var(--rosa1);
+}
+
+[value="todo"]:checked ~ .categorias [for="todo"]{
+    background: linear-gradient(var(--rosa1), var(--rosa2));
+    color: var(--blanco);
+    border: none;
+}
+
+[value="japonesas"]:checked ~ .categorias [for="japonesas"]{
+    background: linear-gradient(var(--rosa1), var(--rosa2));
+    color: var(--blanco);
+    border: none;
+}
+
+[value="coreanas"]:checked ~ .categorias [for="coreanas"]{
+    background: linear-gradient(var(--rosa1), var(--rosa2));
+    color: var(--blanco);
+    border: none;
+}
+
+.albums{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(15rem, 30rem));
+    grid-gap: 3rem;
+    margin-top: 0;
+    padding: 50px 8%;
+    justify-content: center;
+}
+
+.albums div img{
+    width: 100%;
+}
+
+#coreanas:checked ~ .albums .japonesas{
+    display: none;
+}
+
+#japonesas:checked ~ .albums .coreanas{
+    display: none;
+}
+
+.albums div{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.albums div h2{
+    position: absolute;
+    color: #f9f9f9;
+    font-family: avenir;
+    font-size: 2rem;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+
+}
+.albums div img{
+    width: 100%;
+}
+.albums div div{
+    width: 100%;
+    position: absolute;
+    color: #f9f9f9;
+    font-family: avenir;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 5rem;
+    justify-content:center;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+}
+
+
+.albums div:before,
+.albums div:after {
+    content: '';
+    width: 300%;
+    height: 55rem;
+    position: absolute;
+    top:0;
+    left:0rem;
+    background: var(--rosa11);
+    transition: all 900ms;
+}
+
+.albums div:before{
+    transform: rotate(60deg) translateY(-55rem) translateX(0rem);
+}
+
+.albums div:after{
+    transform: rotate(45deg) translateY(61rem) translateX(-6rem);
+    
+}
+.albums div:hover h2,
+.albums div:hover div{
+    visibility: visible;
+    opacity: 1;
+    transition: all 1.4s;
+    z-index: 3;
+}
+.albums div:hover:before{
+    transform: rotate(35deg) translateY(1rem) translateX(-15rem);
+}
+
+.albums div:hover:after{
+    transform: rotate(45deg) translateY(9rem) translateX(-15rem);
+}
+
+footer{
+    background: rgb(45,45,45);
+    width: 100%;
+    height: 40rem;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+
+footer .caja{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    color: rgb(197, 198, 196);
+    height: 72%;
+    padding: 3rem 5rem;
+}
+
+footer h3,
+footer .info{
+    text-align: center;
+    font-family: avenir;
+}
+
+footer h3{
+    top:5rem;
+    font-size: 2rem;
+    position: absolute;
+}
+.datos{
+    width: 100%;
+    height: 9rem;
+    grid-gap: 3rem;
+    padding-bottom: 5rem;
+}
+
+footer .info{
+    display:flex;
+    align-items: center;
+    font-size: 1.5rem;
+   justify-content: center;
+}
+
+
+.info i{
+    border-radius:  50%;
+    font-size: 1.8rem;
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+
+    
+}
+
+footer h2{
+    width: 100%;
+    border-top: .1rem solid rgb(197, 198, 196);
+    color: rgb(197, 198, 196);
+    font-family: avenir;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: normal;
+    letter-spacing: .1rem;
+    padding: 2.5rem 1rem;
+    margin-top: 3rem;
+}
+
+
+@media (max-width:1200px){
+    html{
+        font-size: 55%;
+    }
+}
+
+@media (max-width:835px){
+
+    header{
+        padding: 2rem 5rem;
+        justify-content: flex-end;
+    }
+    .abajo .navbar{
+        background: rgb(45,45,45);
+        justify-content: center;
+    }
+    header label {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    header .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 2rem;
+        transform-origin: top;
+        transform: scaleY(0);
+        opacity: 0;
+        transition: .2s linear;
+    }
+    header .navbar a{
+        display:block;
+        margin: 2rem 0;
+        font-size: 2rem;
+    }
+    
+    header input:checked ~ .navbar{
+        transform: scaleY(1);
+        opacity: 1;
+    }
+
+    header input:checked ~ label::before{
+        content: '\f00d';
+    }
+    h1{
+        font-size: 3rem;
+    }
+    
+    .about{
+        margin-top: 10rem;
+        padding: 0;
+        display:block;
+    }
+    .wall{
+        padding: 0;
+        width: 100%;
+    }
+    .wall img{
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+
+    .quiensoninfo{
+        margin-top: -1rem;
+        width: 100%;
+    }
+    .imagenes{
+        padding: 0 10rem;
+    }
+
+    .imagenes div h3{
+        height: auto;
+        bottom: 0;
+        visibility: visible;
+        opacity: 1;
+        background: rgba(14,123,146,0.7);
+        color: white;
+    }
+
+    /*albunes*/
+    .albums{
+        display: block;
+        padding: 0;
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+
+    .albums .japonesas,
+    .albums .coreanas{
+        width: 100%;
+        border-top: .1rem solid rgba(176, 174, 174, 0.38);
+       border-bottom: .1rem solid rgba(176, 174, 174,0.38);
+        height: 33rem;
+        margin-top: 5rem;
+        padding: 0;
+        justify-content: flex-start;
+    }
+
+    .albums div img{
+        width: 27%;
+        margin-right: 3rem;
+    }
+
+    .albums div h2,
+    .albums div div{
+        width: 30rem;
+        font-weight: lighter;
+        color: black;
+        visibility: visible;
+        opacity: 1;
+        width: auto;
+        position: absolute;
+    }
+    .albums div h2{
+        top:7rem;
+        left: 30%;
+    }
+
+    .albums div div{
+        top:7rem;
+        left: 30%;
+    }
+                                    
+    .albums div:before,
+    .albums div:after {
+        content: '';
+        background: none;
+    }   
+
+    .albums div:before{
+        transform: rotate(0deg) translateY(0rem) translateX(0rem);
+    }
+    
+    .albums div:after{
+        transform: rotate(0deg) translateY(0rem) translateX(0rem);
+        
+    }
+    .albums div:hover h2,
+    .albums div:hover div{
+        visibility: visible;
+        opacity: 1;
+        transition: all 1.4s;
+        z-index: 3;
+    }
+    .albums div:hover:before{
+        transform: rotate(0deg) translateY(0rem) translateX(0rem);
+    }
+    
+    .albums div:hover:after{
+        transform: rotate(0deg) translateY(0rem) translateX(0rem);
+    }
+
+    
+
+}
+@media (max-width:580px) {
+    h1{
+        font-size: 2rem;
+    }
+    .imagenes{
+        padding: 0 5rem;
+    }
+
+    .albums div h2{
+        top:11rem;
+        left: 30%;
+    }
+
+    .albums div div{
+        top:11rem;
+        left: 30%;
+    }
+}
+
+@media (max-width:458px){
+    html{
+        font-size: 49%;
+    }
+    .imagenes{
+        padding: 0 0rem;
+    }
+    
+
+}

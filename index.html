@@ -10,6 +10,11 @@
     <link rel="stylesheet" href="./css/lightbox.css">
 </head>
 <body>
+    <div class="loading" id="loading">
+        <div>
+            <img src="media/Logo_of_TWICE.svg.png" alt="">
+        </div>
+    </div>
     <header>
         <input type="checkbox" name="" id="menu-bar">
         <label for="menu-bar" class="fa fa-bars"></label>
@@ -412,10 +417,35 @@
     </main>
     <script src="./lightbox-plus-jquery.js"></script>
     <script type="text/javascript">
-        window.addEventListener("scroll",function(){
-            var header = document.querySelector("header");
-            header.classList.toggle("abajo",window.scrollY>200);
-        })
+        document.addEventListener('DOMContentLoaded', function() {
+            window.addEventListener("scroll", function() {
+                var header = document.querySelector("header");
+                header.classList.toggle("abajo", window.scrollY > 200);
+            });
+    
+            function showLoading() {
+                document.getElementById('loading').style.display = 'block';
+                // Desactivar scroll
+                document.body.classList.add('no-scroll');
+            }
+    
+            function hideLoading() {
+                document.getElementById('loading').style.display = 'none';
+                // Activar scroll
+                document.body.classList.remove('no-scroll');
+            }
+    
+            // Llamada a la función de carga simulada
+            simulateLoading();
+    
+            function simulateLoading() {
+                showLoading();
+                setTimeout(function() {
+                    hideLoading();
+                }, 3000); // 4000 milisegundos = 4 segundos
+            }
+        });
     </script>
+    
 </body>
 </html>
